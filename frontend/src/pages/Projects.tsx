@@ -53,13 +53,13 @@ const ProjectsPage = () => {
 
   return (
     <div className="flex min-h-screen w-full flex-col items-center justify-normal p-5 text-text">
-      <SearchBar onSearch={handleSearch} placeholder="Search for OWASP projects..." />
       {!isLoaded ? (
         <div className="bg-background/50 fixed inset-0 flex items-center justify-center">
           <LoadingSpinner imageUrl="../public/img/owasp_icon_white_sm.png" />
         </div>
       ) : (
         <div className="flex h-fit w-full flex-col items-center justify-normal gap-4">
+          <SearchBar onSearch={handleSearch} placeholder="Search for OWASP projects..." />
           {totalPages === 0 && (
             <div className="text bg:text-white m-4 text-xl"> No projects found </div>
           )}
